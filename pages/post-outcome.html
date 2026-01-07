@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Outcome - TASKVERSE</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>TASKVERSE</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Dashboard</a>
+                <a href="post-outcome.html" class="active">Post Outcome</a>
+                <a href="candidate-profile.html">Candidate Profile</a>
+                <a href="match-results.html">Match Results</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <div class="user-menu">
+                <span class="user-role">Employer</span>
+                <button class="btn-switch" id="roleSwitch">Switch to Candidate</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h1 class="form-title">Create Outcome Contract</h1>
+        <p class="form-subtitle">Describe what needs to be achieved, not what job title should do it.</p>
+        
+        <form id="outcomeForm">
+            <div class="form-group">
+                <label for="outcomeDescription">Outcome Description *</label>
+                <textarea 
+                    id="outcomeDescription" 
+                    class="form-control" 
+                    placeholder="Example: Build a responsive dashboard with real-time analytics showing user engagement metrics. Should include data filtering, export functionality, and be accessible on mobile devices..."
+                    required
+                    rows="6"
+                ></textarea>
+                <small class="form-text">AI will analyze this to extract required skills and complexity.</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="deadline">Expected Deadline *</label>
+                <input 
+                    type="date" 
+                    id="deadline" 
+                    class="form-control" 
+                    required
+                    min="<?php echo date('Y-m-d'); ?>"
+                >
+            </div>
+            
+            <div class="form-group">
+                <label>AI Analysis Preview</label>
+                <div class="analysis-preview">
+                    <div class="preview-item">
+                        <strong>Extracted Skills:</strong>
+                        <div id="previewSkills" class="skills-preview">
+                            <span class="skill-badge">Will be analyzed after submission</span>
+                        </div>
+                    </div>
+                    <div class="preview-item">
+                        <strong>Complexity Estimate:</strong>
+                        <div id="previewComplexity" class="complexity-bar">
+                            <div class="bar-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-magic"></i> Analyze & Create Outcome Contract
+            </button>
+            
+            <div class="form-note">
+                <p><i class="fas fa-info-circle"></i> After submission, AI will:</p>
+                <ul>
+                    <li>Analyze the outcome description</li>
+                    <li>Extract required skills and tasks</li>
+                    <li>Calculate complexity score</li>
+                    <li>Find matching candidates automatically</li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

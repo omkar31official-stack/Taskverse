@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASKVERSE - AI Work Allocation System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>TASKVERSE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="pages/post-outcome.html">Post Outcome</a>
+                <a href="pages/candidate-profile.html">Candidate Profile</a>
+                <a href="pages/match-results.html">Match Results</a>
+                <a href="pages/feedback.html">Feedback</a>
+            </div>
+            <div class="user-menu">
+                <span class="user-role">Employer</span>
+                <button class="btn-switch" id="roleSwitch">Switch to Candidate</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Intelligent Work Allocation System</h1>
+                <p class="subtitle">No job titles. No resumes. Just outcomes matched with proof.</p>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="stat-number">128</div>
+                        <div class="stat-label">Outcome Contracts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">342</div>
+                        <div class="stat-label">Skill Profiles</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">89%</div>
+                        <div class="stat-label">Match Accuracy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="action-grid">
+                <a href="pages/post-outcome.html" class="action-card">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Post New Outcome</h3>
+                    <p>Create an outcome-based work request</p>
+                </a>
+                <a href="pages/candidate-profile.html" class="action-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Build Profile</h3>
+                    <p>Create or update skill profile with proof</p>
+                </a>
+                <a href="pages/match-results.html" class="action-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>View Matches</h3>
+                    <p>See AI-generated allocation results</p>
+                </a>
+                <a href="pages/feedback.html" class="action-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Provide Feedback</h3>
+                    <p>Rate candidate performance</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Recent Activity -->
+        <section class="recent-activity">
+            <div class="section-header">
+                <h2>Recent Allocation Activity</h2>
+                <button class="btn-view-all">View All</button>
+            </div>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon success">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p><strong>Web App Dashboard</strong> allocated to <strong>Alex Chen</strong></p>
+                        <small class="text-muted">Fit Score: 0.92 • 2 hours ago</small>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon warning">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p><strong>API Integration</strong> requires your feedback</p>
+                        <small class="text-muted">Deadline: Tomorrow • 5 hours ago</small>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon info">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="activity-content">
+                        <p><strong>New match found</strong> for Machine Learning Model</p>
+                        <small class="text-muted">3 candidates matched • 1 day ago</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Status -->
+        <section class="system-status">
+            <h2>AI System Status</h2>
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>Outcome Analyzer</h3>
+                    </div>
+                    <div class="status-body">
+                        <div class="status-indicator active"></div>
+                        <span>Online</span>
+                        <p>Processing natural language outcomes</p>
+                    </div>
+                </div>
+                <div class="status-card">
+                    <div class="status-header">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Skill Matcher</h3>
+                    </div>
+                    <div class="status-body">
+                        <div class="status-indicator active"></div>
+                        <span>Online</span>
+                        <p>Calculating execution fit scores</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

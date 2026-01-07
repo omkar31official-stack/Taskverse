@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Results - TASKVERSE</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>TASKVERSE</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Dashboard</a>
+                <a href="post-outcome.html">Post Outcome</a>
+                <a href="candidate-profile.html">Candidate Profile</a>
+                <a href="match-results.html" class="active">Match Results</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <div class="user-menu">
+                <span class="user-role">Employer</span>
+                <button class="btn-switch" id="roleSwitch">Switch to Candidate</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h1>AI Match Results</h1>
+            <div class="header-actions">
+                <button class="btn-refresh" onclick="loadMatchResults()">
+                    <i class="fas fa-sync-alt"></i> Refresh Matches
+                </button>
+                <div class="match-stats">
+                    <span><i class="fas fa-filter"></i> Showing: <strong id="matchCount">0</strong> outcomes with matches</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="match-explanation">
+            <div class="explanation-card">
+                <h3><i class="fas fa-robot"></i> How Matches Are Calculated</h3>
+                <p>Execution Fit Score = (Skill Match × 0.5) + (Proof Score × 0.3) + (Reliability × 0.2)</p>
+                <div class="score-breakdown">
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Skill Match</span>
+                        <div class="breakdown-bar">
+                            <div class="bar-fill" style="width: 50%; background: var(--primary);"></div>
+                        </div>
+                        <span class="breakdown-value">50%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Proof Score</span>
+                        <div class="breakdown-bar">
+                            <div class="bar-fill" style="width: 30%; background: var(--secondary);"></div>
+                        </div>
+                        <span class="breakdown-value">30%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-label">Reliability</span>
+                        <div class="breakdown-bar">
+                            <div class="bar-fill" style="width: 20%; background: var(--success);"></div>
+                        </div>
+                        <span class="breakdown-value">20%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="minScore">Minimum Fit Score:</label>
+                <input type="range" id="minScore" min="0" max="100" value="70" onchange="updateFilter()">
+                <span id="scoreValue">0.70</span>
+            </div>
+            <div class="filter-group">
+                <label for="sortBy">Sort By:</label>
+                <select id="sortBy" class="form-control" onchange="updateFilter()">
+                    <option value="fit">Highest Fit Score</option>
+                    <option value="deadline">Nearest Deadline</option>
+                    <option value="complexity">Complexity</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="matchResults" class="results-grid">
+            <!-- AI-generated matches will appear here -->
+        </div>
+        
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No Matches Found</h3>
+            <p>Try adjusting your filters or create more outcome contracts.</p>
+            <a href="post-outcome.html" class="btn-primary">
+                <i class="fas fa-file-contract"></i> Create New Outcome
+            </a>
+        </div>
+        
+        <div class="info-section">
+            <h3><i class="fas fa-question-circle"></i> About Automatic Allocation</h3>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h4>No Applications</h4>
+                    <p>Candidates don't apply. The AI system automatically matches the best candidates based on proven skills.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Real-time Updates</h4>
+                    <p>As new candidates join or update their profiles, matches are recalculated automatically.</p>
+                </div>
+                <div class="info-card">
+                    <h4>Allocation Process</h4>
+                    <p>Click "Allocate Work" to assign an outcome to a candidate. They'll be notified immediately.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>

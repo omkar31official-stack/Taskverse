@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Profile - TASKVERSE</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>TASKVERSE</span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Dashboard</a>
+                <a href="post-outcome.html">Post Outcome</a>
+                <a href="candidate-profile.html" class="active">Candidate Profile</a>
+                <a href="match-results.html">Match Results</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+            <div class="user-menu">
+                <span class="user-role">Candidate</span>
+                <button class="btn-switch" id="roleSwitch">Switch to Employer</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h1 class="form-title">Build Your Skill Profile</h1>
+        <p class="form-subtitle">Show proof, not promises. Upload evidence of your capabilities.</p>
+        
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="candidateName">Full Name *</label>
+                <input 
+                    type="text" 
+                    id="candidateName" 
+                    class="form-control" 
+                    placeholder="John Doe"
+                    required
+                >
+            </div>
+            
+            <div class="form-group">
+                <label for="githubLink">GitHub Profile URL *</label>
+                <input 
+                    type="url" 
+                    id="githubLink" 
+                    class="form-control" 
+                    placeholder="https://github.com/username"
+                    required
+                >
+                <small class="form-text">We'll analyze your repositories to verify skills.</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Select Your Skills</label>
+                <div class="skills-selector">
+                    <div class="skill-tag">React</div>
+                    <div class="skill-tag">Node.js</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">TypeScript</div>
+                    <div class="skill-tag">HTML/CSS</div>
+                    <div class="skill-tag">MongoDB</div>
+                    <div class="skill-tag">PostgreSQL</div>
+                    <div class="skill-tag">AWS</div>
+                    <div class="skill-tag">Docker</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">REST API</div>
+                    <div class="skill-tag">GraphQL</div>
+                    <div class="skill-tag">JWT</div>
+                    <div class="skill-tag">Redux</div>
+                    <div class="skill-tag">Vue.js</div>
+                    <div class="skill-tag">Angular</div>
+                    <div class="skill-tag">Express.js</div>
+                    <div class="skill-tag">Django</div>
+                    <div class="skill-tag">Flask</div>
+                </div>
+                <small class="form-text">Click to select skills you can prove.</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Upload Proof of Skill</label>
+                <div class="upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Upload Proof of Skill</h3>
+                    <p>Drag & drop or click to upload screenshots, GitHub repos, certificates</p>
+                </div>
+                <small class="form-text">Accepted: PNG, JPG, PDF, ZIP files (Max 10MB)</small>
+            </div>
+            
+            <div class="form-group">
+                <label>Skill Confidence Score</label>
+                <div class="score-container">
+                    <div class="score-value" id="confidenceScore">--</div>
+                    <div class="score-label">
+                        <p>AI-generated confidence score based on:</p>
+                        <ul>
+                            <li>GitHub activity analysis</li>
+                            <li>Proof documentation quality</li>
+                            <li>Skill consistency</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-user-check"></i> Update Skill Profile
+            </button>
+            
+            <div class="form-note">
+                <p><i class="fas fa-lightbulb"></i> <strong>How it works:</strong></p>
+                <p>The system will automatically match you with outcome contracts based on your skill confidence score and proof. No need to apply - you'll be notified when matched.</p>
+            </div>
+        </form>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+</html>
